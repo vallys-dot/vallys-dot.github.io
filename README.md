@@ -1,2 +1,0 @@
-# vallys
-personal website
