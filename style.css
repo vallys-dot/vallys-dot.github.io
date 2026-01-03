@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    background-color:honeydew;
+}
+
+.parallax {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.title {
+    margin: 0;
+    color: #599859;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    pointer-events: none;
+    
+    z-index: 1;
+}
+
+
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@keyframes backspin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(-360deg); }
+}
+
+.buttons {
+    cursor: default;
+    animation: spin 60s linear infinite;
+    
+    z-index: 2;
+}
+
+.buttons button {
+    background-color: #599859;
+    border: none;
+    color: white;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    border-radius: 6px;
+
+    offset: circle(300px) calc(100%*sibling-index()/sibling-count()) 0deg;
+    animation: backspin 60s linear infinite;
+}
+
+.buttons button:hover {
+    color: #114311;
+}
+
+.buttons, .back-layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.back-layer {
+    background-image: radial-gradient( #D1EDE1
+        6px,
+        transparent 6px
+    );
+    background-size: 60px 60px;
+    scale: 1.2;
+
+    z-index: 0;
+}
